@@ -1,0 +1,2 @@
+autocmd BufWritePost,FileWritePost *.ts :VimuxRunCommand "clear; make"
+autocmd BufWritePost,FileWritePost *.css :VimuxRunCommand "clear; make"

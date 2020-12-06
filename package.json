@@ -1,0 +1,26 @@
+{
+  "name": "game",
+  "version": "0.0.1",
+  "description": "Life isn't one.",
+  "author": [
+    "Lasana Murray @metasansana"
+  ],
+  "files": [
+    "lib",
+    "public"
+  ],
+  "type": "lib/index.d.ts",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/node": "^14.14.10",
+    "browserify": "^16.5.2",
+    "clean-css-cli": "^4.3.0",
+    "less": "^3.12.2",
+    "ts-node": "^9.1.0",
+    "typescript": "^3.9.7",
+    "uglify-es": "^3.3.9"
+  },
+  "dependencies": {
+    "@quenk/noni": "^1.40.14"
+  }
+}
