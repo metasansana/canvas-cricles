@@ -4,19 +4,19 @@ TSC=./node_modules/.bin/tsc
 LESSC=./node_modules/.bin/lessc
 CLEANCSSS=./node_modules/.bin/cleancss
 
-./: public
+./: docs
 	touch $@
 
-public: public/assets/js/app.js public/assets/css/app.css
+docs: docs/assets/js/app.js docs/assets/css/app.css
 	touch $@
 
-public/assets/js/app.js: lib
-	mkdir -p public/assets/js || true
+docs/assets/js/app.js: lib
+	mkdir -p docs/assets/js || true
 	$(BROWSERIFY) lib/main.js $(if $(findstring yes,$(DEBUG)),,|$(UGLIFYJS))\
 	> $@
 
-public/assets/css/app.css: $(shell find src -name \*.less)
-	mkdir -p public/assets/css || true
+docs/assets/css/app.css: $(shell find src -name \*.less)
+	mkdir -p docs/assets/css || true
 	$(LESSC) src/main.less | $(CLEANCSSS) > $@
 
 lib: $(shell find src -name \*.ts)
@@ -26,4 +26,4 @@ lib: $(shell find src -name \*.ts)
 
 .PHONY: clean
 clean:
-	@rm -R ./lib ./public/assets/js ./public/assets/css || true
+	@rm -R ./lib ./docs/assets/js ./docs/assets/css || true
